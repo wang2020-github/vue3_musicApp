@@ -1,15 +1,7 @@
 const { defineConfig } = require('@vue/cli-service')
+// const registerRouter = require('./backend/router')
 module.exports = defineConfig({
   transpileDependencies: true,
-  chainWebpack: config => {
-    config.resolve.alias
-        .set("@", resolve("src"))
-        .set("assets", resolve("src/assets"))
-        .set("components", resolve("src/components"))
-        .set("views", resolve("src/views"))
-    // .set("base", resolve("baseConfig"))
-    // .set("public", resolve("public"));
-  },
   css: {
     loaderOptions: {
       sass: {
@@ -21,4 +13,9 @@ module.exports = defineConfig({
       }
     }
   },
+  // devServer: {
+  //   before(app) {
+  //     registerRouter(app)
+  //   }
+  // },
 })
